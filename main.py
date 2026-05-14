@@ -1,9 +1,12 @@
 from random import randint
 
+
 def password_generator():
-    how_many = int(input("How many characters do you want in your password [5/128]? "))    
+    how_many = int(input("How many characters do you want in your password [5/128]? "))
     while how_many < 5 or how_many > 128:
-        how_many = int(input("How many characters do you want in your password [5/128]? "))
+        how_many = int(
+            input("How many characters do you want in your password [5/128]? ")
+        )
 
     characters = user_preferences()
 
@@ -13,7 +16,7 @@ def password_generator():
         password += characters[randint(0, len(characters) - 1)]
 
     return password
-    
+
 
 def user_preferences():
     """
@@ -49,8 +52,8 @@ def test_answer(answer, ask):
         str: The valid answer.
     """
     while answer.lower() not in ["yes", "no", "y", "n", "not"]:
-      answer = input(ask)
-      
+        answer = input(ask)
+
     return answer
 
 
@@ -68,7 +71,10 @@ def gen_characters(low_case, up_case, num_case, sym_case):
         str: The set of characters to use in the password.
     """
     characters = ""
-    options = ["yes", "y",]
+    options = [
+        "yes",
+        "y",
+    ]
     if low_case in options:
         characters += "abcdefghijklmnopqrstuvwxyz"
     if up_case in options:
@@ -77,7 +83,7 @@ def gen_characters(low_case, up_case, num_case, sym_case):
         characters += "0123456789"
     if sym_case in options:
         characters += "!@#$%^&*"
-        
+
     return characters
 
 
@@ -85,3 +91,4 @@ my_password = password_generator()
 print(my_password)
 
 # © Miguel Laurentino - 2026
+
