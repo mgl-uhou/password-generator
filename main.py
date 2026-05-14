@@ -83,3 +83,5 @@ def gen_characters(low_case, up_case, num_case, sym_case):
 
 my_password = password_generator()
 print(my_password)
+
+# © Miguel Laurentino - 2026
